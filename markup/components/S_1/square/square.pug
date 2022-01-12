@@ -1,0 +1,15 @@
+mixin square
+    .square
+        .square__wrapper
+            .square__container
+                .square__item
+                    .square__contents.square__front
+                        .square__depth
+                            picture
+                                source(type="image/webp" srcset="static/img/content/front.webp" media="")
+                                img(data-src="static/img/content/front.jpg" src="" alt="avatar")
+
+                    .square__contents.square__back
+                        .square__depth
+                            video(loop autoplay muted)
+                                source(src="static/img/content/back.mp4" type="video/mp4")

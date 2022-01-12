@@ -1,0 +1,11 @@
+{
+  "component_header": {
+    "number": "S_1",
+    "name": "header"
+  },
+
+  "component_square": {
+    "number": "S_1",
+    "name": "square"
+  }
+}

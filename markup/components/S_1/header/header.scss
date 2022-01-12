@@ -1,0 +1,149 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    z-index: 99;
+    background: $header-bg;
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-width: 1780px;
+        margin: 0 auto;
+        padding: 0 15px;
+        z-index: 999;
+    }
+
+    &__nav {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        z-index: 99;
+        background: $header-menu-bg;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all .5s ease-in-out;
+    }
+
+    &__nav-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    &__burger-menu {
+        width: 110px;
+        padding: 30px;
+        cursor: pointer;
+
+        span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 4px;
+            margin-bottom: 4px;
+            background: $burger-line;
+            transition: .3s ease;
+
+            &:nth-child(2) {
+                width: 80%;
+            }
+
+            &:last-child {
+                width: 60%;
+                margin-bottom: 0;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            span {
+                width: 100%;
+                background: $burger-line-hov;
+            }
+        }
+
+    }
+
+    &__list {
+        @extend %ul-reset;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    &__list-item {
+        margin-bottom: 20px;
+    }
+
+    &__list-link {
+        font-size: 24px;
+        font-weight: 700;
+        color: $header-link;
+        text-decoration: none;
+        transition: all .35s ease-in-out;
+
+        &:hover {
+            color: $header-link-hov;
+        }
+    }
+}
+
+.is-scroll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: all .35s ease-in-out;
+}
+
+.open {
+
+    .header__nav {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    span {
+        background: $burger-close;
+
+        &:nth-child(1) {
+            top: 8px;
+            right: -1px;
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:nth-child(3) {
+            top: -8px;
+            width: 100%;
+            transform: rotate(-45deg);
+        }
+
+
+    }
+
+    .header__burger-menu {
+
+        &:hover,
+        &:focus {
+
+            span {
+                width: 90%;
+                background: $burger-close-hov;
+            }
+        }
+    }
+}
